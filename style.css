@@ -25,7 +25,7 @@ header {
   margin: 50px;
 }
 
-.flex-form input[type="submit"] {
+.flex-form button {
   background: #ff5a5f;
   border-top: 1px solid #ff5a5f;
   border-bottom: 1px solid #ff5a5f;
@@ -33,7 +33,7 @@ header {
   width: 70%;
 }
 
-.flex-form > * {
+.flex-form>* {
   border: 0;
   padding: 10px;
   background: white;
@@ -45,7 +45,7 @@ header {
   font-size: 1.1rem;
 }
 
-.flex-form > *:last-child {
+.flex-form>*:last-child {
   border-right: 0;
 }
 
@@ -64,7 +64,7 @@ header {
   margin-bottom: auto;
 }
 
-input[type="search"] {
+input[type="text"] {
   flex-basis: 300px;
 }
 
@@ -72,7 +72,7 @@ input[type="search"] {
   display: flex;
   flex-direction: column;
   color: white;
-  /* display: none; */
+  display: none;
 }
 
 .flex-container {
@@ -86,7 +86,6 @@ input[type="search"] {
   margin-left: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  border: 1px solid black;
   text-align: center;
   font-size: 2rem;
   background: rgba(0, 0, 0, 0.1);
@@ -99,7 +98,6 @@ input[type="search"] {
 .card-small {
   margin: 20px;
   border-radius: 5px;
-  border: 1px solid black;
   text-align: center;
   font-size: 2rem;
   color: white;
@@ -129,11 +127,11 @@ footer {
     width: 500px;
   }
 
-  input[type="search"] {
+  input[type="text"] {
     font-size: 20px;
   }
 
-  .flex-form input[type="submit"] {
+  .flex-form button {
     font-size: 20px;
     width: 40%;
   }
@@ -141,7 +139,7 @@ footer {
   .cards-container {
     display: flex;
     flex-direction: row;
-    /* display: none; */
+    display: none;
     margin-top: 170px;
   }
 
@@ -156,8 +154,8 @@ footer {
     font-size: 3rem;
   }
 
-  .weather-icon {
-    width: 25%;
+  img {
+    width: 40%;
   }
 
   .card-small {
@@ -166,6 +164,6 @@ footer {
     border-radius: 5px;
     font-size: 1.2rem;
   }
-  footer {
-  }
+
+  footer {}
 }
