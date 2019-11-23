@@ -15,9 +15,6 @@ function searchWeather(searchTerm) {
 }
 
 function init(resultFromServer) {
-  console.log(resultFromServer);
-  console.log(resultFromServer.list[3]);
-
   let currentDate = document.getElementById("current-date");
   let day1 = document.getElementById("date1");
   let day2 = document.getElementById("date2");
