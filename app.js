@@ -44,11 +44,8 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   if (searchTerm) {
     searchWeather(searchTerm);
   }
-  if (!searchTerm) {
-    cardContainer.style.display = "none";
-  } else {
-    cardContainer.style.display = "flex";
-  }
+
+  cardContainer.style.display = "flex";
 });
 
 function setDayWeather(dayDiv, resultElement, cityName) {
