@@ -11,6 +11,9 @@ function searchWeather(searchTerm) {
     })
     .then(result => {
       init(result);
+    })
+    .catch(err => {
+      showError(err);
     });
 }
 
@@ -41,7 +44,11 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   if (searchTerm) {
     searchWeather(searchTerm);
   }
-  cardContainer.style.display = "flex";
+  if (!searchTerm) {
+    cardContainer.style.display = "none";
+  } else {
+    cardContainer.style.display = "flex";
+  }
 });
 
 function setDayWeather(dayDiv, resultElement, cityName) {
@@ -68,4 +75,8 @@ function setDayWeather(dayDiv, resultElement, cityName) {
   let dayWrapper = moment(currentDate);
   let dayString = dayWrapper.format("D MMMM YYYY, h:mm:ss a");
   date.innerHTML = `<h4>${dayString}</h4><hr/>`;
+}
+
+function showError(err) {
+  alert("Can't show weather");
 }

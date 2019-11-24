@@ -20,7 +20,7 @@ body {
 
 header {
   text-align: center;
-  font-size: 1.6em;
+  font-size: 2em;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(223, 211, 211);
   margin-top: 50px;
   margin-bottom: 100px;
@@ -54,8 +54,6 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 .flex-form {
@@ -118,10 +116,6 @@ footer {
     font-size: 4rem;
   }
 
-  .search {
-    font-size: 3rem;
-  }
-
   .flex-form {
     margin-top: 50px;
     width: 500px;
@@ -140,7 +134,7 @@ footer {
     display: flex;
     flex-direction: row;
     display: none;
-    margin-top: 170px;
+    margin-top: 150px;
   }
 
   .flex-container {
