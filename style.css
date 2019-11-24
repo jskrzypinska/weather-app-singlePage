@@ -20,9 +20,10 @@ body {
 
 header {
   text-align: center;
-  font-size: 2em;
+  font-size: 1.6em;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(223, 211, 211);
-  margin: 50px;
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 .flex-form button {
@@ -42,7 +43,7 @@ header {
   outline: 0;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-appearance: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .flex-form>*:last-child {
@@ -61,7 +62,7 @@ header {
   display: flex;
   border: 20px solid rgba(0, 0, 0, 0.3);
   border-radius: 5px;
-  margin-bottom: auto;
+  margin-bottom: 50px;
 }
 
 input[type="text"] {
@@ -82,7 +83,6 @@ input[type="text"] {
 
 .card-large {
   width: 90vw;
-  height: 80vh;
   margin-left: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -109,7 +109,7 @@ footer {
   text-align: center;
   background-color: transparent;
   position: relative;
-  top: 280px;
+  top: 200px;
 }
 
 /* desktop styles */
