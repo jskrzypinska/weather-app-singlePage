@@ -51,8 +51,9 @@ function setDayWeather(dayDiv, resultElement, cityName) {
   let weatherDescription = dayDiv.querySelector(".temperature-description");
   let date = dayDiv.querySelector(".card-date");
 
-  imgWeather.src =
-    "http://openweathermap.org/img/w/" + resultElement.weather[0].icon + ".png";
+  let iconId = resultElement.weather[0].icon;
+
+  imgWeather.src = `img/${iconId}.png`;
 
   let resultDescription = resultElement.weather[0].description;
 
@@ -61,10 +62,10 @@ function setDayWeather(dayDiv, resultElement, cityName) {
 
   temperature.innerHTML = Math.floor(resultElement.main.temp) + "&#x2103";
 
-  city.innerHTML = cityName;
+  city.innerHTML = `<h1>${cityName}</h1>`;
 
   let currentDate = new Date(resultElement.dt * 1000);
   let dayWrapper = moment(currentDate);
   let dayString = dayWrapper.format("D MMMM YYYY, h:mm:ss a");
-  date.innerHTML = dayString;
+  date.innerHTML = `<h4>${dayString}</h4><hr/>`;
 }
