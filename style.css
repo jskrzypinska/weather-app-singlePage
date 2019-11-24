@@ -114,6 +114,7 @@ footer {
 @media (min-width: 700px) {
   header {
     font-size: 4rem;
+    margin: 50px;
   }
 
   .flex-form {
@@ -134,7 +135,7 @@ footer {
     display: flex;
     flex-direction: row;
     display: none;
-    margin-top: 150px;
+    margin-top: 50px;
   }
 
   .flex-container {
