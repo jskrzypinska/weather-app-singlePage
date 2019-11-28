@@ -69,10 +69,9 @@ input[type="search"] {
 }
 
 .cards-container {
-  display: flex;
   flex-direction: column;
   color: white;
-  /* display: none; */
+  display: none;
 }
 
 .flex-container {
@@ -82,7 +81,7 @@ input[type="search"] {
 
 .card-large {
   width: 90vw;
-  height: 80vh;
+  /* height: 80vh; */
   margin-left: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
@@ -139,9 +138,8 @@ footer {
   }
 
   .cards-container {
-    display: flex;
     flex-direction: row;
-    /* display: none; */
+    display: none;
     margin-top: 170px;
   }
 
@@ -156,6 +154,10 @@ footer {
     font-size: 3rem;
   }
 
+  .weatherIcon {
+    height: 100%;
+  }
+
   .weather-icon {
     width: 25%;
   }
@@ -166,6 +168,10 @@ footer {
     border-radius: 5px;
     font-size: 1.2rem;
   }
-  footer {
+
+  .skip-date {
+    flex-direction: row;
+    display: none;
   }
+
 }
