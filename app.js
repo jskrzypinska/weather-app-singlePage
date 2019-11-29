@@ -1,10 +1,10 @@
 const appId = '8ff59c308b48432bbbb3259838f7c7f7';
 const units = 'metric';
 let searchMethod = 'q';
-var counter = 0;
+let counter = 0;
 
-function searchWeather(searchTerm) {
-    fetch(`http://api.openweathermap.org/data/2.5/forecast?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`)
+function searchWeather(cityName) {
+    fetch(`http://api.openweathermap.org/data/2.5/forecast?${searchMethod}=${cityName}&APPID=${appId}&units=${units}`)
         .then((result) => {
             return result.json();
         }).then((result) => {
@@ -28,21 +28,29 @@ function init(resultFromServer) {
 
 }
 
-document.getElementById('skipDateBtn').addEventListener('click', (e) => {
-    e.preventDefault();
-    counter++;
-    let searchTerm = document.getElementById('searchInput').value;
-    if(searchTerm)
-        searchWeather(searchTerm); 
-});
-
 document.getElementById('searchBtn').addEventListener('click', (e) => {
     e.preventDefault();
     counter = 0;
-    let searchTerm = document.getElementById('searchInput').value;
-    if(searchTerm)
-        searchWeather(searchTerm);
-
+    let cityName = document.getElementById('searchInput').value;
+    if(cityName) {
+        searchWeather(cityName);
+    }    
     document.querySelector(".cards-container").style.display = "flex";
     document.querySelector(".skip-date").style.display = "flex";    
+});
+
+document.getElementById('prevDateBtn').addEventListener('click', (e) => {
+    if(counter > 0){ counter--; }     
+    let cityName = document.getElementById('searchInput').value;
+    if(cityName) {
+        searchWeather(cityName);
+    } 
+});
+
+document.getElementById('nextDateBtn').addEventListener('click', (e) => {
+    if(counter < 35){ counter++; }
+    let cityName = document.getElementById('searchInput').value;
+    if(cityName) {
+        searchWeather(cityName);
+    } 
 });
