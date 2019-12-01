@@ -67,6 +67,14 @@ input[type="text"] {
   flex-basis: 300px;
 }
 
+h1 {
+  padding: 5px;
+}
+
+h4 {
+  padding: 5px;
+}
+
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -89,9 +97,6 @@ input[type="text"] {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.weather-icon {
-  padding: 10px;
-}
 
 .card-small {
   margin: 20px;
@@ -100,6 +105,10 @@ input[type="text"] {
   font-size: 2rem;
   color: white;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.temperature-description {
+  padding: 10px;
 }
 
 footer {
@@ -151,7 +160,7 @@ footer {
   }
 
   img {
-    width: 30%;
+    width: 20%;
   }
 
   .card-small {
@@ -161,5 +170,4 @@ footer {
     font-size: 1.2rem;
   }
 
-  footer {}
 }
