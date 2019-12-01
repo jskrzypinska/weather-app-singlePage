@@ -5,7 +5,7 @@ let counter = 0;
 
 function searchWeather(searchTerm) {
   fetch(
-    `http://api.openweathermap.org/data/2.5/forecast?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
+    `https://api.openweathermap.org/data/2.5/forecast?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
   )
     .then(result => {
       return result.json();
