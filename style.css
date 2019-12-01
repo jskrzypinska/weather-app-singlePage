@@ -119,7 +119,7 @@ footer {
 /* desktop styles */
 @media (min-width: 700px) {
   header {
-    font-size: 4rem;
+    font-size: 3rem;
     margin: 50px;
   }
 
