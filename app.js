@@ -67,7 +67,7 @@ function setDayWeather(dayDiv, resultElement, cityName) {
 
   temperature.innerHTML = Math.floor(resultElement.main.temp) + "&#x2103";
 
-  city.innerHTML = `<h1>${cityName}</h1>`;
+  city.innerHTML = `<h2>${cityName}</h2>`;
 
   let currentDate = new Date(resultElement.dt * 1000);
   let dayWrapper = moment(currentDate);
