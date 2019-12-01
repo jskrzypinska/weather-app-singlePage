@@ -10,5 +10,5 @@ https://jskrzypinska.github.io/weather-app-singlePage/
 
 ## Authors
 
-Joanna Skrzypinska - [github profile](https://github.com/jskrzypinska)
+Joanna Skrzypinska - [github profile](https://github.com/jskrzypinska) </br>
 Mariusz Porysiak - [github profile](https://github.com/Mariuuuusz)
