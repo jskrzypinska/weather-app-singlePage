@@ -67,6 +67,11 @@ input[type="text"] {
   flex-basis: 300px;
 }
 
+h2,
+h4 {
+  padding: 5px;
+}
+
 .cards-container {
   display: flex;
   flex-direction: column;
@@ -107,7 +112,7 @@ input[type="text"] {
 }
 
 .temperature-description {
-  padding: 5px;
+  padding: 10px;
 }
 
 .skip-date {
@@ -129,7 +134,7 @@ input[type="text"] {
   flex-basis: 50%;
 }
 
-.skip-date > * {
+.skip-date>* {
   border: 0;
   padding: 10px;
   background: white;
@@ -174,23 +179,26 @@ footer {
     display: flex;
     flex-direction: row;
     display: none;
-    margin-top: 50px;
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
   }
 
   .flex-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-left: 30px;
   }
 
   .card-large {
     height: auto;
     font-size: 2.6rem;
-    
+
   }
 
   img {
-    width: 30%;
+    width: 20%;
   }
 
   .card-small {

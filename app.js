@@ -14,7 +14,8 @@ function searchWeather(searchTerm) {
       init(result);
     })
     .catch(err => {
-      showError(err);
+      cardContainer.style.display = "none";
+      Swal.fire("Any fool can use a computer - couldn't find a weather.");
     });
 }
 
@@ -27,11 +28,11 @@ function init(resultFromServer) {
 
   let cityName = resultFromServer.city.name;
 
-  setDayWeather(currentDate, resultFromServer.list[0+counter], cityName);
-  setDayWeather(day1, resultFromServer.list[1+counter], cityName);
-  setDayWeather(day2, resultFromServer.list[2+counter], cityName);
-  setDayWeather(day3, resultFromServer.list[3+counter], cityName);
-  setDayWeather(day4, resultFromServer.list[4+counter], cityName);
+  setDayWeather(currentDate, resultFromServer.list[0 + counter], cityName);
+  setDayWeather(day1, resultFromServer.list[1 + counter], cityName);
+  setDayWeather(day2, resultFromServer.list[2 + counter], cityName);
+  setDayWeather(day3, resultFromServer.list[3 + counter], cityName);
+  setDayWeather(day4, resultFromServer.list[4 + counter], cityName);
 }
 
 document.getElementById("flexForm").addEventListener("click", function(e) {
@@ -52,20 +53,24 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   skipDate.style.display = "flex";
 });
 
-document.getElementById('prevDateBtn').addEventListener('click', () => {
-  if(counter > 0){ counter--; }     
-  let searchTerm = document.getElementById('searchInput').value;
-  if(searchTerm) {
-      searchWeather(searchTerm);
-  } 
+document.getElementById("prevDateBtn").addEventListener("click", () => {
+  if (counter > 0) {
+    counter--;
+  }
+  let searchTerm = document.getElementById("searchInput").value;
+  if (searchTerm) {
+    searchWeather(searchTerm);
+  }
 });
 
-document.getElementById('nextDateBtn').addEventListener('click', (e) => {
-  if(counter < 35){ counter++; }
-  let searchTerm = document.getElementById('searchInput').value;
-  if(searchTerm) {
-      searchWeather(searchTerm);
-  } 
+document.getElementById("nextDateBtn").addEventListener("click", e => {
+  if (counter < 35) {
+    counter++;
+  }
+  let searchTerm = document.getElementById("searchInput").value;
+  if (searchTerm) {
+    searchWeather(searchTerm);
+  }
 });
 
 function setDayWeather(dayDiv, resultElement, cityName) {
@@ -86,14 +91,10 @@ function setDayWeather(dayDiv, resultElement, cityName) {
 
   temperature.innerHTML = Math.floor(resultElement.main.temp) + "&#x2103";
 
-  city.innerHTML = `<h1>${cityName}</h1>`;
+  city.innerHTML = `<h2>${cityName}</h2>`;
 
   let currentDate = new Date(resultElement.dt * 1000);
   let dayWrapper = moment(currentDate);
   let dayString = dayWrapper.format("D MMMM YYYY, h:mm:ss a");
   date.innerHTML = `<h4>${dayString}</h4><hr/>`;
-}
-
-function showError(err) {
-  alert("Can't show weather");
 }
