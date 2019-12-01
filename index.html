@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/en-gb.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.4.0/dist/sweetalert2.all.min.js"></script>
+
     <title>Weather Aplication</title>
 </head>
 
@@ -18,103 +22,86 @@
     <main>
         <div class="search">
 
-            <form class="flex-form">
-
-                <input type="search" placeholder="Choose city">
-                <input type="submit" value="Search">
+            <form class="flex-form" id="flexForm">
+                <input type="text" placeholder="City" id="searchInput">
+                <button id="searchBtn">Search</button>
             </form>
 
         </div>
         <div class="cards-container">
-            <div class="card-large">
+            <div class="error"></div>
+            <div class="card-large" id="current-date">
                 <div class="card-location">
-                    <h2>City</h2>
                 </div>
-                <div class="notification">
-                    <p>Cannot show weather</p>
-                </div>
+                <div class="card-date"></div>
+                <div class="weather-icon"><img class="document-icon-img"></div>
                 <div class="weather-container">
-                    <div class="weather-icon"><img src="img/unknown.svg" alt=""></div>
-                    <div class="temperature-value">
-                        <p>33&#x2103</p>
+
+                    <div class="weather-icon">
+                        <div class="temperature-value">
+                        </div>
+
+
                     </div>
                     <div class="temperature-description">
-                        <p>Rainy and cloudly </p>
                     </div>
                 </div>
             </div>
             <div class="flex-container">
-                <div class="card-small" >
+                <div class="card-small" id="date1">
                     <div class="card-location">
-                        <h2>City</h2>
                     </div>
-                    <div class="notification">
-                        <p>Cannot show weather</p>
-                    </div>
+                    <div class="card-date"></div>
                     <div class="weather-container">
-                        <div class="weather-icon"><img src="img/unknown.svg" alt=""></div>
+                        <div class="weather-icon"><img class="document-icon-img"></div>
                         <div class="temperature-value">
-                            <p>33&#x2103</p>
                         </div>
                         <div class="temperature-description">
-                            <p>Rainy and cloudly </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-small" >
+                <div class="card-small" id="date2">
                     <div class="card-location">
-                        <h2>City</h2>
                     </div>
-                    <div class="notification">
-                        <p>Cannot show weather</p>
-                    </div>
+                    <div class="card-date" id="cardDate3"></div>
                     <div class="weather-container">
-                        <div class="weather-icon"><img src="img/unknown.svg" alt=""></div>
+                        <div class="weather-icon"><img class="document-icon-img"></div>
                         <div class="temperature-value">
-                            <p>33&#x2103</p>
                         </div>
                         <div class="temperature-description">
-                            <p>Rainy and cloudly </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-small" >
+                <div class="card-small" id="date3">
                     <div class="card-location">
-                        <h2>City</h2>
                     </div>
-                    <div class="notification">
-                        <p>Cannot show weather</p>
-                    </div>
+                    <div class="card-date" id="cardDate4"></div>
                     <div class="weather-container">
-                        <div class="weather-icon"><img src="img/unknown.svg" alt=""></div>
+                        <div class="weather-icon"><img class="document-icon-img"></div>
                         <div class="temperature-value">
-                            <p>33&#x2103</p>
                         </div>
                         <div class="temperature-description">
-                            <p>Rainy and cloudly </p>
                         </div>
                     </div>
                 </div>
-                <div class="card-small" >
+                <div class="card-small" id="date4">
                     <div class="card-location">
-                        <h2>City</h2>
                     </div>
-                    <div class="notification">
-                        <p>Cannot show weather</p>
-                    </div>
+                    <div class="card-date"></div>
                     <div class="weather-container">
-                        <div class="weather-icon"><img src="img/unknown.svg" alt=""></div>
+                        <div class="weather-icon"><img class="document-icon-img"></div>
                         <div class="temperature-value">
-                            <p>33&#x2103</p>
                         </div>
                         <div class="temperature-description">
-                            <p>Rainy and cloudly </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <div class="skip-date">
+            <button id="prevDateBtn">&#60;&#60;&#60; Prev 3 hours</button>
+            <button id="nextDateBtn">Next 3 hours &#62;&#62;&#62;</button>
+        </div>
     </main>
     <footer>
         <h4>2019 &copy; Joanna Skrzypinska
