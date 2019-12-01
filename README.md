@@ -6,7 +6,7 @@ Using external API openweather - https://openweathermap.org/
 
 ## Working demo
 
-https://jskrzypinska.github.io/snakeGame-JavaScript-codersCamp/
+https://jskrzypinska.github.io/weather-app-singlePage/
 
 ## Authors
 
