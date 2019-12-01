@@ -2,6 +2,8 @@ let appId = "0ccb533d897cd90cce0c87cb4db7910c";
 let units = "metric";
 let searchMethod = "q";
 
+let cardContainer = document.querySelector(".cards-container");
+
 function searchWeather(searchTerm) {
   fetch(
     `http://api.openweathermap.org/data/2.5/forecast?${searchMethod}=${searchTerm}&APPID=${appId}&units=${units}`
@@ -13,11 +15,14 @@ function searchWeather(searchTerm) {
       init(result);
     })
     .catch(err => {
-      showError(err);
+      cardContainer.style.display = "none";
+      Swal.fire("Any fool can use a computer - couldn't find a weather.");
     });
 }
 
 function init(resultFromServer) {
+  cardContainer.style.display = "flex";
+
   let currentDate = document.getElementById("current-date");
   let day1 = document.getElementById("date1");
   let day2 = document.getElementById("date2");
@@ -37,17 +42,11 @@ document.getElementById("flexForm").addEventListener("click", function(e) {
   e.preventDefault();
 });
 
-let cardContainer = document.querySelector(".cards-container");
-
 document.getElementById("searchBtn").addEventListener("click", () => {
   let searchTerm = document.getElementById("searchInput").value;
   if (searchTerm) {
     searchWeather(searchTerm);
   }
-  if (showError) {
-    cardContainer.style.display = "none";
-  }
-  cardContainer.style.display = "flex";
 });
 
 function setDayWeather(dayDiv, resultElement, cityName) {
@@ -74,8 +73,4 @@ function setDayWeather(dayDiv, resultElement, cityName) {
   let dayWrapper = moment(currentDate);
   let dayString = dayWrapper.format("D MMMM YYYY, h:mm:ss a");
   date.innerHTML = `<h4>${dayString}</h4><hr/>`;
-}
-
-function showError(err) {
-  alert("Can't show weather");
 }
