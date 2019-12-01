@@ -22,7 +22,7 @@ header {
   text-align: center;
   font-size: 2em;
   text-shadow: 1px 1px 1px #000, 3px 3px 5px rgb(223, 211, 211);
-  margin: 50px;
+  margin: 2%;
 }
 
 .flex-form input[type="submit"] {
@@ -30,7 +30,7 @@ header {
   border-top: 1px solid #ff5a5f;
   border-bottom: 1px solid #ff5a5f;
   color: white;
-  width: 70%;
+  width: 30%;
 }
 
 .flex-form > * {
@@ -65,7 +65,7 @@ header {
 }
 
 input[type="search"] {
-  flex-basis: 300px;
+  flex-basis: 250px;
 }
 
 .cards-container {
@@ -80,19 +80,26 @@ input[type="search"] {
 }
 
 .card-large {
-  width: 90vw;
-  /* height: 80vh; */
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin: 20px;
   border-radius: 5px;
   border: 1px solid black;
   text-align: center;
   font-size: 2rem;
+  color: white;
   background: rgba(0, 0, 0, 0.1);
 }
 
 .weather-icon {
-  width: 40%;
+  padding: 10px;
+  max-width: 100%;
+}
+
+.weatherIconBig {
+  max-width: 50%;
+}
+
+.weatherIcon {
+  max-width: 50%;
 }
 
 .card-small {
@@ -105,10 +112,23 @@ input[type="search"] {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.skip-date {
+  justify-content: center;
+  align-items: center;
+  border: 20px solid rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  margin-bottom: auto;
+  margin-top: 50px;
+  min-width: 200px;
+  max-width: 400px;
+  flex-direction: row;
+  display: none;
+}
+
 .skip-date button {
   background: #ff5a5f;
   color: white;
-  flex-basis: 250px;
+  flex-basis: 50%;
 }
 
 .skip-date > * {
@@ -123,30 +143,18 @@ input[type="search"] {
   font-size: 1rem;
 }
 
-.skip-date {
-  /* display: flex; */
-  border: 20px solid rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
-  margin-bottom: auto;
-  margin-top: 50px;
-  width: 500px;
-  flex-direction: row;
-  display: none;
-}
-
 footer {
   color: white;
   text-align: center;
   background-color: transparent;
   position: relative;
-  top: 280px;
+  top: 30px;
 }
-
 
 /* desktop styles */
 @media (min-width: 700px) {
   header {
-    font-size: 4rem;
+    font-size: 3em;
   }
 
   .search {
@@ -154,23 +162,23 @@ footer {
   }
 
   .flex-form {
-    margin-top: 50px;
+    margin-top: 5px;
     width: 500px;
   }
 
   input[type="search"] {
     font-size: 20px;
+    flex-basis: 70%;
   }
 
   .flex-form input[type="submit"] {
     font-size: 20px;
-    width: 40%;
   }
 
   .cards-container {
     flex-direction: row;
     display: none;
-    margin-top: 170px;
+    margin-top: 10px;
   }
 
   .flex-container {
@@ -180,35 +188,22 @@ footer {
   }
 
   .card-large {
+    width: 100%;
     height: auto;
     font-size: 3rem;
+    align-content: center;
   }
 
   .weatherIcon {
-    height: 100%;
-  }
-
-  .weather-icon {
-    width: 25%;
+    max-width: 30%;
   }
 
   .card-small {
     flex: 35%;
     margin: 10px;
     border-radius: 5px;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    padding: 10px;
   }
-
-  /* .skip-date {
-    margin-top: 50px;
-    width: 40%;
-    flex-direction: row;
-    display: none;
-  }
-
-  .skip-date button {
-    font-size: 20px;
-    width: 40%;
-  } */
 
 }

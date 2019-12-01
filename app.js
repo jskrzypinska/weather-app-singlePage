@@ -8,11 +8,15 @@ function searchWeather(cityName) {
         .then((result) => {
             return result.json();
         }).then((result) => {
-            init(result);
-    });
+           init(result);
+        }).catch(err => {
+           showError(err);
+        });
+    ;
 }
 
 function init(resultFromServer) {
+    console.log(resultFromServer);
 
     const locationHeader = document.getElementsByClassName('locationHeader');
     const dateTime = document.getElementsByClassName('dateTime');
@@ -22,7 +26,7 @@ function init(resultFromServer) {
 
     for(let i=0; i<locationHeader.length; i++){locationHeader[i].innerHTML = resultFromServer.city.name;}
     for(let i=0; i<dateTime.length; i++){dateTime[i].innerHTML = resultFromServer.list[i+counter].dt_txt;}
-    for(let i=0; i<weatherIcon.length; i++){weatherIcon[i].src = 'http://openweathermap.org/img/w/' + resultFromServer.list[i+counter].weather[0].icon + '.png';}
+    for(let i=0; i<weatherIcon.length; i++){weatherIcon[i].src = 'img/' + resultFromServer.list[i+counter].weather[0].icon + '.png';}
     for(let i=0; i<temperatureValue.length; i++){temperatureValue[i].innerHTML = Math.floor(resultFromServer.list[i+counter].main.temp) + '&#176;C';}
     for(let i=0; i<weatherDescription.length; i++){weatherDescription[i].innerHTML = resultFromServer.list[i+counter].weather[0].description;}
 
@@ -54,3 +58,7 @@ document.getElementById('nextDateBtn').addEventListener('click', (e) => {
         searchWeather(cityName);
     } 
 });
+
+function showError(err) {
+    alert("Can't show weather");
+}
