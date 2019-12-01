@@ -44,7 +44,9 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   if (searchTerm) {
     searchWeather(searchTerm);
   }
-
+  if (showError) {
+    cardContainer.style.display = "none";
+  }
   cardContainer.style.display = "flex";
 });
 
