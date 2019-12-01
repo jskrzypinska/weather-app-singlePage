@@ -15,11 +15,14 @@ function searchWeather(searchTerm) {
     })
     .catch(err => {
       cardContainer.style.display = "none";
-      Swal.fire("Any fool can use a computer - couldn't find a weather.");
+      skipDate.style.display = "none";
+      Swal.fire("Couldn't find a weather.");
     });
 }
 
 function init(resultFromServer) {
+  cardContainer.style.display = "flex";
+  skipDate.style.display = "flex";
   let currentDate = document.getElementById("current-date");
   let day1 = document.getElementById("date1");
   let day2 = document.getElementById("date2");
@@ -48,9 +51,6 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   if (searchTerm) {
     searchWeather(searchTerm);
   }
-
-  cardContainer.style.display = "flex";
-  skipDate.style.display = "flex";
 });
 
 document.getElementById("prevDateBtn").addEventListener("click", () => {
